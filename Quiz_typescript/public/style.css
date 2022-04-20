@@ -1,0 +1,39 @@
+body{
+    background-color: rgb(118 1 88 / 40%);
+    color : white ;
+    font-family : 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ; 
+    font-size : 20px ;  
+    height: 100 vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 80%;
+    height: 80%;
+    position: relative;
+    background-color: rgb(36 255 104 / 63%);
+    padding: 30px;
+    border-radius: 14px;
+}
+
+.container .answers{
+    display: grid;
+    grid-template-columns: repeat(2 , 50%);
+    width: 100%;
+    padding: 20px;
+}
+
+.container .buttons{
+    display: flex;
+    justify-content: space-around;
+}
+input[type="button"]{
+    width: 120px ;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    font-size: 23px;
+}
