@@ -175,61 +175,95 @@ let quizArr = quiz.questions;
 let j = 0;
 // let que_tag;
 // let que_t ag;
-while(j < quizArr.length) {
-    // que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-    // let que_tag;
-    // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-    let que_tag =  `<h1>${quizArr[j].questionText}</h1>`;
-    // console.log('zero', que_tag);
-    console.log('XD', quizArr[j]);
-    
 
-    let count = 0;    
-    btn_next.onclick = () => {
-        console.log('one', que_tag);
+let que_tag = '<h1>' + quizArr[1].questionText  + '</h1>' ;
+    questions.innerHTML = que_tag ;
+    showAnswer(1);
 
-        // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-        // console.log(que_tag);
+let i = 1;
 
-        console.log('HAHA', quizArr[j]);
-        
-        questions.innerHTML += que_tag;
-
-        console.log('two', que_tag);
-
-        console.log(count++);
-        
-        
-
-    }
-    console.log(quizArr[j].questionText);
-    j++;
+function send() {
+    let que_tag = '<h1>' + quizArr[i].questionText  + '</h1>' ;
+    questions.innerHTML = que_tag ;
+    showAnswer(i)
+    i++;
+    que_tag = '';
 }
-btn_next.addEventListener('click', function(index: number) {
-    // let que_tag;
-    // for(let i = 0; i < quizArr.length; i++) {
-    //     que_tag = '<h1>' + quizArr[i].questionText; + '</h1>' ;
-    //     questions.innerHTML += que_tag;
-        
-    //     console.log(quizArr[i].questionText);
-    // }    
-})
 
-// btn_next.addEventListener("click", showQuestions(1))
+function back() {
+    i--;
+    let que_tag = '<h1>' + quizArr[i].questionText  + '</h1>' ;
+    questions.innerHTML = que_tag ;
+    showAnswer(i)
+    que_tag = '';
+}
 
-// function showQuestions(index : number){
+
+btn_next.onclick = () =>{
+    send();
+}
+
+btn_prev.onclick = ()=>{
+    back()
+}
+
+
+
     
 
-//     let que_tag = '<h1>' + quiz.questions[index].questionText; + '</h1>' ;
-//     questions.innerHTML = que_tag;
+
+
+
+
+
+
+// while(j < quizArr.length) {
+//     // que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//     // let que_tag;
+//     // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//     let que_tag =  `<h1>${quizArr[j].questionText}</h1>`;
+//     console.log(j)
+//     // console.log('zero', que_tag);
+//     console.log('XD', quizArr[j]);
+//     let count = 0;    
+//     btn_next.onclick = () => {
+//         console.log('one', que_tag);
+
+//         // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//         // console.log(que_tag);
+
+//             console.log('HAHA', quizArr[j]);
+            
+//             questions.innerHTML += que_tag;
+
+            
     
-//   /*  quiz.questions.forEach(element => {
-//         let que_tag = '<h1>' + element.questionText + '</h1>' 
-//         questions.innerHTML += que_tag;
-//     }); 
-//     console.log(quiz.questions[0]); 
-//     */
+//             console.log('two', que_tag);
+    
+//             console.log(count++);   
+    
+//     }
+
+    
+//     console.log(quizArr[j].questionText);
+//     j++;
 // }
+
+// // btn_next.addEventListener("click", showQuestions(1))
+
+// // function showQuestions(index : number){
+    
+
+// //     let que_tag = '<h1>' + quiz.questions[index].questionText; + '</h1>' ;
+// //     questions.innerHTML = que_tag;
+    
+// //   /*  quiz.questions.forEach(element => {
+// //         let que_tag = '<h1>' + element.questionText + '</h1>' 
+// //         questions.innerHTML += que_tag;
+// //     }); 
+// //     console.log(quiz.questions[0]); 
+// //     */
+// // }
 
 function showAnswer(index : number){
 
@@ -241,7 +275,7 @@ function showAnswer(index : number){
     options.innerHTML = tag_op1; 
 };
 //showQuestions(0);
-showAnswer(0);
+// showAnswer(0);
 
    /* quiz.questions.forEach(answer => {
         

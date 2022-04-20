@@ -172,45 +172,62 @@ let quizArr = quiz.questions;
 let j = 0;
 // let que_tag;
 // let que_t ag;
-while (j < quizArr.length) {
-    // que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-    // let que_tag;
-    // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-    let que_tag = `<h1>${quizArr[j].questionText}</h1>`;
-    // console.log('zero', que_tag);
-    console.log('XD', quizArr[j]);
-    let count = 0;
-    btn_next.onclick = () => {
-        console.log('one', que_tag);
-        // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
-        // console.log(que_tag);
-        console.log('HAHA', quizArr[j]);
-        questions.innerHTML += que_tag;
-        console.log('two', que_tag);
-        console.log(count++);
-    };
-    console.log(quizArr[j].questionText);
-    j++;
+let que_tag = '<h1>' + quizArr[1].questionText + '</h1>';
+questions.innerHTML = que_tag;
+showAnswer(1);
+let i = 1;
+function send() {
+    let que_tag = '<h1>' + quizArr[i].questionText + '</h1>';
+    questions.innerHTML = que_tag;
+    showAnswer(i);
+    i++;
+    que_tag = '';
 }
-btn_next.addEventListener('click', function (index) {
-    // let que_tag;
-    // for(let i = 0; i < quizArr.length; i++) {
-    //     que_tag = '<h1>' + quizArr[i].questionText; + '</h1>' ;
-    //     questions.innerHTML += que_tag;
-    //     console.log(quizArr[i].questionText);
-    // }    
-});
-// btn_next.addEventListener("click", showQuestions(1))
-// function showQuestions(index : number){
-//     let que_tag = '<h1>' + quiz.questions[index].questionText; + '</h1>' ;
-//     questions.innerHTML = que_tag;
-//   /*  quiz.questions.forEach(element => {
-//         let que_tag = '<h1>' + element.questionText + '</h1>' 
-//         questions.innerHTML += que_tag;
-//     }); 
-//     console.log(quiz.questions[0]); 
-//     */
+function back() {
+    i--;
+    let que_tag = '<h1>' + quizArr[i].questionText + '</h1>';
+    questions.innerHTML = que_tag;
+    showAnswer(i);
+    que_tag = '';
+}
+btn_next.onclick = () => {
+    send();
+};
+btn_prev.onclick = () => {
+    back();
+};
+// while(j < quizArr.length) {
+//     // que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//     // let que_tag;
+//     // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//     let que_tag =  `<h1>${quizArr[j].questionText}</h1>`;
+//     console.log(j)
+//     // console.log('zero', que_tag);
+//     console.log('XD', quizArr[j]);
+//     let count = 0;    
+//     btn_next.onclick = () => {
+//         console.log('one', que_tag);
+//         // let que_tag = '<h1>' + quizArr[j].questionText; + '</h1>' ;
+//         // console.log(que_tag);
+//             console.log('HAHA', quizArr[j]);
+//             questions.innerHTML += que_tag;
+//             console.log('two', que_tag);
+//             console.log(count++);   
+//     }
+//     console.log(quizArr[j].questionText);
+//     j++;
 // }
+// // btn_next.addEventListener("click", showQuestions(1))
+// // function showQuestions(index : number){
+// //     let que_tag = '<h1>' + quiz.questions[index].questionText; + '</h1>' ;
+// //     questions.innerHTML = que_tag;
+// //   /*  quiz.questions.forEach(element => {
+// //         let que_tag = '<h1>' + element.questionText + '</h1>' 
+// //         questions.innerHTML += que_tag;
+// //     }); 
+// //     console.log(quiz.questions[0]); 
+// //     */
+// // }
 function showAnswer(index) {
     let tag_op1 = '<input type="checkbox" value=' + quiz.questions[index].options[0].text + '>'
         + '<h1>' + quiz.questions[index].options[1].text + '</h1>'
@@ -220,7 +237,7 @@ function showAnswer(index) {
 }
 ;
 //showQuestions(0);
-showAnswer(0);
+// showAnswer(0);
 /* quiz.questions.forEach(answer => {
      
      let tag_op1 = '<h1>' + answer.options + '</h1>'
